@@ -38,12 +38,8 @@ function register(req, res) {
     db('users').where({username}).select('password')
     .then(data => {
 
-      console.log(data)
-      const hash = data[0].password
-      console.log(hash)
-
       //See if matches
-      !bcrypt.compareSync(password, hash) ? res.status(400).json({err:"Invalid Credentials"}) : res.status(200).json({msg:'Login successful!'})
+      !bcrypt.compareSync(password, data[0].password) ? res.status(400).json({err:"Invalid Credentials"}) : res.status(200).json({msg:'Login successful!'})
 
     })
     .catch(err => res.status(400).json(err))
