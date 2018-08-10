@@ -1,9 +1,9 @@
 <!-- Answers to the Short Answer Essay Questions go here -->
 
 1.  Describe Middleware, Sessions (as we know them in express), bcrypt and JWT.
-- Seems like everything in node is middleware. Middleware is, software in between or in the middle of, the client and the server. A request is usually sent by the client to the server, middle has the ability to grab the request from the client and modify it before sending it along it way to the endpoint. Middleware can be global, eg, it applies to all requests or it can be local, eg it applies to only particular endpoints. 
+- Seems like everything in node is middleware. Middleware is, software in between or in the middle of, the client and the server. A request is usually sent by the client to the server. Middleware has the ability to grab the request from the client and modify it before sending it along it way to the endpoint. Middleware can be global, eg, it applies to all requests or it can be local, eg it applies only to a particular endpoint(s). 
 
-- Sessions are the classic way to implement authentication. Express-session is a library that helps us use sessions in node. When a user is authenticated (via their username/password) a session object can be attached to the req via req.session = session_object. A simple use case would be to place the username as the session object. The library is set up so that each request and response will now have that session in the request. Sessions are tied to a per client / per device.
+- Sessions are the classic way to implement authentication. Express-session is a library that helps us use sessions in node. When a user is authenticated (via their username/password) a session object can be attached to the request via `req.session = session_object`. A simple use case would be to place the username as the session object. The library is set up so that each request and response will now have that session in the request. Sessions are tied to a per client / per device.
 
 - bcrypt is hashing library. Hashing is different from encryption where hashing is 1-way and while encryptions is 2 way, thus decryption. brcrypt is a library usually used to _hash_ a password before storing it into a database. This ensures that the users actual password is never known or stored.
 
